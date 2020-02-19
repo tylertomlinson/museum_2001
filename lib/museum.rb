@@ -1,12 +1,14 @@
 class Museum
-    attr_reader :name,
-                :exhibits,
-                :patrons
+  attr_reader :name,
+              :exhibits,
+              :patrons,
+              :lottery_contestants
 
   def initialize(name)
     @name = name
     @exhibits = []
     @patrons = []
+    @lottery_contestants = []
   end
 
   def add_exhibit(exhibit)
@@ -29,12 +31,15 @@ class Museum
   end
 
   def ticket_lottery_contestants(interest)
-    @patrons.find_all { |patron| patron.interests.include?(interest.name) }
+    contestants = @patrons.find_all { |patron| patron.interests.include?(interest.name) }
+    @lottery_contestants << contestants
   end
 
   def draw_lottery_winner(interest)
     @patrons.find_all { |patron| patron.interests.include?(interest.name) }.sample
   end
 
-  
+  def announce_lottery_winner(interest)
+    return "#{draw_lottery_winner(interest)} has won the Dead Sea Scrolls exhibit lottery"
+  end
 end
