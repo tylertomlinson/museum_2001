@@ -110,36 +110,3 @@ def test_can_announce_lottery_winner
 
   assert_equal expected, @dmns.announce_lottery_winner(@dead_sea_scrolls)
 end
-
-
-# pry(main)> dmns.add_exhibit(gems_and_minerals)
-#
-# pry(main)> dmns.add_exhibit(dead_sea_scrolls)
-#
-# pry(main)> dmns.add_exhibit(imax)
-#
-# pry(main)> dmns.patrons
-# # => []
-#
-# pry(main)> patron_1 = Patron.new("Bob", 0)
-# # => #<Patron:0x00007fb2011455b8...>
-#
-# pry(main)> patron_1.add_interest("Gems and Minerals")
-#
-# pry(main)> patron_1.add_interest("Dead Sea Scrolls")
-#
-# pry(main)> patron_2 = Patron.new("Sally", 20)
-# # => #<Patron:0x00007fb20227f8b0...>
-#
-# pry(main)> patron_2.add_interest("Dead Sea Scrolls")
-#
-# pry(main)> patron_3 = Patron.new("Johnny", 5)
-# # => #<Patron:0x6666fb20114megan...>
-#
-# pry(main)> patron_3.add_interest("Dead Sea Scrolls")
-#
-# pry(main)> dmns.admit(patron_1)
-#
-# pry(main)> dmns.admit(patron_2)
-#
-# pry(main)> dmns.admit(patron_3)
