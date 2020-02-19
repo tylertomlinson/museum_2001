@@ -89,9 +89,9 @@ class MusemTest < Minitest::Test
   end
 
   def test_can_draw_lottery_winner
-    @dmns.stubs(:ticket_lottery_contestants).returns(@patron1)
+    @dmns.stubs(:ticket_lottery_contestants).returns(@patron_1)
 
-    assert_equal @patron1, @dmns.draw_lottery_winner(@dead_sea_scrolls)
+    assert_equal @patron_1.name, @dmns.draw_lottery_winner(@dead_sea_scrolls)
   end
 
   def test_can_announce_lottery_winner
