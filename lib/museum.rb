@@ -36,5 +36,7 @@ class Museum
     @patrons.find_all { |patron| patron.interests.include?(interest.name) }.sample
   end
 
-  
+  def announce_lottery_winner(interest)
+    return "#{draw_lottery_winner(interest)} has won the Dead Sea Scrolls exhibit lottery"
+  end
 end
